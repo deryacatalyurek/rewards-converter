@@ -10,7 +10,7 @@ public class RewardValue{
     //Constructor accepting miles value 
     public RewardValue(int milesValue){
         //convert miles to cash
-        this.cashValue = milesValue * CONVERSION_RATE;
+        this.cashValue = convertoToCash(milesValue);
     }
 
     public double getCashValue(){
@@ -22,6 +22,9 @@ public class RewardValue{
         double milesValue = this.cashValue / CONVERSION_RATE;
         int milesI = (int)milesValue;
         return milesI;
+    }
+    public static double convertoToCash(int milesValue){
+        return milesValue * CONVERSION_RATE;
     }
 
 }
