@@ -19,12 +19,15 @@ public class RewardValue{
 
     public int getMilesValue(){
         //convert cash to miles 
-        double milesValue = this.cashValue / CONVERSION_RATE;
-        int milesI = (int)milesValue;
-        return milesI;
+        this.milesValue = convertoToMiles(this.cashValue);
     }
+
     public static double convertoToCash(int milesValue){
         return milesValue * CONVERSION_RATE;
+    }
+
+    public static double convertoToMiles(double cashValue){
+        return (int) (cashValue / CONVERSION_RATE);
     }
 
 }
